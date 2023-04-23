@@ -1,9 +1,21 @@
-yum install mongodb-org -y
+script=$(realpath "$0")
+script_path=$(dirname "$script")
+mongorepofile = ${script_path}/mongo.repo
+source ${script_path}/common.sh
 
-systemctl enable mongod
-systemctl start mongod
+func_print_head "Setup MongoDB Repo"
+cp ${mongorepofile} /etc/yum.repos.d/mongo.repo  &>>$log_file
+func_stat_check $?
 
+func_print_head "Install MongoDB"
+yum install mongodb-org -y &>>$log_file
+func_stat_check $?
+
+func_print_head "Update MongoDB Listen Address"
 sed -e -i "s|127.0.0.1|0.0.0.0"  /etc/mongod.conf &>>$log_file
-vim /etc/mongod.conf
+func_stat_check $?
 
-systemctl restart mongod
+func_print_head "Start MongoDB"
+systemctl enable mongod &>>$log_file
+systemctl restart mongod &>>$log_file
+func_stat_check $?

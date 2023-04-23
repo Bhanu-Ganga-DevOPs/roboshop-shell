@@ -1,13 +1,12 @@
+script=$(realpath "$0")
+script_path=$(dirname "$script")
+mongorepofile = ${script_path}/mongo.repo
 source ${script_path}/common.sh
 
+
 component=catalogue
+schema_setup=mongo
 
 
+func_nodejs
 
-cp /home/centos/  /etc/systemd/system/catalogue.service
-
-systemctl daemon-reload
-systemctl enable catalogue
-systemctl start catalogue
-
-yum install mongodb-org-shell -y
