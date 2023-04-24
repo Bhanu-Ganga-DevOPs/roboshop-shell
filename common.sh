@@ -9,9 +9,10 @@ app_user=roboshop
 
 #.service and .repo file paths
 script = $(realpath "$0")
+echo ${log_file}
 script_path = $(dirname "$script")
 
-echo ${log_file}
+
 
 #func_print_head() {
 #  echo -e "\e[32m>>>>>>>>> $1 <<<<<<<<<< \e[0m"
