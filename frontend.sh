@@ -25,8 +25,7 @@ cp ${script_path}/roboshop.conf /etc/nginx/default.d/roboshop.conf &>>$log_file
 func_stat_check $?
 
 func_print_head "Start Nginx"
-echo "srhdhd"
 systemctl enable nginx &>>$log_file
-echo "aegsrhdh"
 systemctl restart nginx &>>$log_file
+echo "aegsrhdh"
 func_stat_check $?
