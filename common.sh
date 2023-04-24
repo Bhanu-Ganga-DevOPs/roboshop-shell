@@ -64,7 +64,7 @@ func_schema_setup() {
     func_stat_check $?
 
     func_print_head "Load Schema"
-    mongo --host mongodb-dev.rdevopsb72.online </app/schema/${component}.js &>>$log_file
+    mongo --host mongodb-dev.gangabhavanikatraparthi.online </app/schema/${component}.js &>>$log_file
     func_stat_check $?
   fi
   if [ "${schema_setup}" == "mysql" ]; then
@@ -73,7 +73,7 @@ func_schema_setup() {
     func_stat_check $?
 
     func_print_head "Load Schema"
-    mysql -h mysql-dev.rdevopsb72.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql &>>$log_file
+    mysql -h mongodb-dev.gangabhavanikatraparthi.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql &>>$log_file
     func_stat_check $?
   fi
 }
