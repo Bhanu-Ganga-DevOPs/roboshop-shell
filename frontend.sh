@@ -27,5 +27,5 @@ func_stat_check $?
 func_print_head "Start Nginx"
 systemctl enable nginx &>>$log_file
 systemctl restart nginx &>>$log_file
-echo "aegsrhdh"
+
 func_stat_check $?
