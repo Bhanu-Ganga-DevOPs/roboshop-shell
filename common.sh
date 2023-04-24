@@ -1,8 +1,9 @@
 echo "hello"
 
-## Log file path
-#log_file=/tmp/roboshop.log
-#
+# Log file path
+log_file=/tmp/roboshop.log
+echo ${log_file}
+
 ##Application user
 #app_user=roboshop
 #
