@@ -2,10 +2,12 @@ echo "hello"
 
 # Log file path
 log_file=/tmp/roboshop.log
-echo ${log_file}
 
-##Application user
-#app_user=roboshop
+
+#Application user
+app_user=roboshop
+
+echo ${log_file}
 #
 ##.service and .repo file paths
 #script = $(realpath "$0")
