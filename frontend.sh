@@ -4,8 +4,8 @@ script_path=$(dirname "$script")
 source ${script_path}/common.sh
 
 func_print_head "install nginx"
-yum install nginx -y  &>>$log_file
-func_stat_check $?
+#yum install nginx -y  &>>$log_file
+#func_stat_check $?
 
 #func_print_head "Remove the old content"
 #rm -rf /usr/share/nginx/html/* &>>$log_file
