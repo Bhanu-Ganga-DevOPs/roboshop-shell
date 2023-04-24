@@ -18,14 +18,9 @@ func_print_head() {
 }
 
 func_stat_check() {
-  echo "status nvmnvnv"+$1
   if [ $1 -eq 0 ]; then
-    echo "status in if nvmnvnv"+$1
-    exit;
     echo -e "\e[35mSUCCESS\e[0m"
   else
-    echo "status in else nvmnvnv"+$1
-    exit;
     echo -e "\e[31mFAILURE\e[0m"
     echo "Refer the log file /tmp/roboshop.log for more information"
     exit 1
