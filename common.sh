@@ -69,6 +69,8 @@ func_schema_setup() {
   fi
   if [ "${schema_setup}" == "mysql" ]; then
     func_print_head "Install MySQL Client"
+    echo "inside mysql"
+    exit;
     yum install mysql -y &>>$log_file
     func_stat_check $?
 
