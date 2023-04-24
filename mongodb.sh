@@ -1,8 +1,7 @@
 script=$(realpath "$0")
 script_path=$(dirname "$script")
 mongorepofile=${script_path}/mongo.repo
-echo ${mongorepofile}
-exit 1
+
 source ${script_path}/common.sh
 
 func_print_head "Setup MongoDB Repo"
