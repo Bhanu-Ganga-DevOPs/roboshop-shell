@@ -18,9 +18,14 @@ func_print_head() {
 }
 
 func_stat_check() {
+  echo "status nvmnvnv"+$1
   if [ $1 -eq 0 ]; then
+    echo "status in if nvmnvnv"+$1
+    exit;
     echo -e "\e[35mSUCCESS\e[0m"
   else
+    echo "status in else nvmnvnv"+$1
+    exit;
     echo -e "\e[31mFAILURE\e[0m"
     echo "Refer the log file /tmp/roboshop.log for more information"
     exit 1
@@ -74,9 +79,6 @@ func_schema_setup() {
     func_stat_check $?
 
     func_print_head "Load Schema"
-    echo "----"
-    echo ${mysql_root_password}
-    exit;
     mysql -h mongodb-dev.gangabhavanikatraparthi.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql &>>$log_file
     func_stat_check $?
   fi
