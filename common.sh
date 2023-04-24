@@ -9,8 +9,7 @@ app_user=roboshop
 
 #.service and .repo file paths
 script=$(realpath "$0")
-echo ${log_file}
-script_path = $(dirname "$script")
+script_path=$(dirname "$script")
 
 
 

@@ -1,6 +1,6 @@
 script=$(realpath "$0")
 script_path=$(dirname "$script")
-mongorepofile = ${script_path}/mongo.repo
+mongorepofile=${script_path}/mongo.repo
 source ${script_path}/common.sh
 
 func_print_head "Setup MongoDB Repo"
