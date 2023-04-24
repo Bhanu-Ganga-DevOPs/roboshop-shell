@@ -7,12 +7,12 @@ log_file=/tmp/roboshop.log
 #Application user
 app_user=roboshop
 
+#.service and .repo file paths
+script = $(realpath "$0")
+script_path = $(dirname "$script")
+
 echo ${log_file}
-#
-##.service and .repo file paths
-#script = $(realpath "$0")
-#script_path = $(dirname "$script")
-#
+
 #func_print_head() {
 #  echo -e "\e[32m>>>>>>>>> $1 <<<<<<<<<< \e[0m"
 #}
