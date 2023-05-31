@@ -87,11 +87,11 @@ func_schema_setup() {
 
 
 func_systemd_setup() {
-  if [ "${schema_setup}" != "mysql" ]; then
+
   func_print_head "Setup SystemD Service"
   cp ${script_path}/${component}.service /etc/systemd/system/${component}.service &>>$log_file
   func_stat_check $?
-  fi
+
 
   func_print_head "Start ${component} Service"
   systemctl daemon-reload &>>$log_file
