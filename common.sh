@@ -91,7 +91,6 @@ func_systemd_setup() {
   func_print_head "Setup SystemD Service"
   cp ${script_path}/${component}.service /etc/systemd/system/${component}.service &>>$log_file
   func_stat_check $?
-
   fi
 
   func_print_head "Start ${component} Service"
