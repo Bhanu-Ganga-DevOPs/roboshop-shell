@@ -75,7 +75,7 @@ func_schema_setup() {
     func_stat_check $?
 
     func_print_head "Load Schema"
-#     echo " mysql -h mysql-dev.gangabhavanikatraparthi.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql &>>$log_file"
+     echo " mysql -h mysql-dev.gangabhavanikatraparthi.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql &>>$log_file"
     mysql -h mysql-dev.gangabhavanikatraparthi.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql &>>$log_file
     func_stat_check $?
   fi
