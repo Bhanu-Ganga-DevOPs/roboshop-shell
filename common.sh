@@ -70,10 +70,12 @@ func_schema_setup() {
   if [ "${schema_setup}" == "mysql" ]; then
     func_print_head "Install MySQL Client"
     echo "inside mysql"
+    echo ${mysql_root_password}
     yum install mysql -y &>>$log_file
     func_stat_check $?
 
     func_print_head "Load Schema"
+    echo " mysql -h mysql-dev.gangabhavanikatraparthi.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql &>>$log_file"
     mysql -h mysql-dev.gangabhavanikatraparthi.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql &>>$log_file
     func_stat_check $?
   fi
