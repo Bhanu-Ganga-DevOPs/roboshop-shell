@@ -81,7 +81,8 @@ func_schema_setup() {
     func_print_head "Load Schema"
     echo " mysql -h mysql-dev.gangabhavanikatraparthi.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql &>>$log_file"
     mysql -h mysql-dev.gangabhavanikatraparthi.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql &>>$log_file
-    sleep 30
+    sleep 50
+    systemctl restart ${component} &>>$log_file
     func_stat_check $?
   fi
 }
